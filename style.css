@@ -1,0 +1,1486 @@
+/* ROOT */
+
+:root {
+  /* colors */
+  --bg-navbar: #2D2D2D;
+  --indigo-dark: #2B2038;
+  --indigo-light: #2F1C48;
+  --white: #F8F9FF;
+  --lilac: #AC6CFF;
+  --lilac-light: #EADAFF;
+  --alto: #808080;
+  --crema: #FBEBD7;
+  --orange: #FF9900;
+}
+
+/* RESET */
+
+*,
+*::after,
+*::before,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Poppins";
+  background: var(--indigo-dark);
+  color: var(--white);
+  font-size: 16px;
+
+}
+
+section {
+  scroll-margin-top: 40px;
+}
+
+/* REUSED STYLE */
+
+.container {
+  margin: 0 auto;
+  padding: 0% 5% 0% 5%;
+}
+
+/* NAVBAR */
+
+nav {
+  background: var(--bg-navbar);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  border-bottom: 1px solid var(--alto);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-item a {
+  display: inline-block;
+}
+
+.navbar-item a:hover {
+  border-bottom: 2px solid var(--lilac);
+}
+
+.navbar-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.navbar-signin {
+  width: 101px;
+  height: 48px;
+  background: inherit;
+  color: var(--lilac);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.navbar-signin:hover {
+  background: var(--lilac);
+  color: var(--white);
+  border-radius: 10px;
+}
+
+.navbar-signup {
+  width: 101px;
+  height: 48px;
+  background: var(--lilac);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ---  NAVBAR MOBILE MENU  --- */
+
+i {
+  font-size: 40px;
+  color: var(--white);
+}
+
+.bx {
+  display: none;
+}
+
+.navbar-mobile-list {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-navbar);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transform: translateX(+100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-mobile-list.active {
+  transform: translateX(0);
+}
+
+.navbar-mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  font-size: 30px;
+}
+
+.navbar-close {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+}
+
+.hero-list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
+.hero-title {
+  max-width: 700px;
+  padding-top: 100px;
+  font-weight: bold;
+  font-size: 66px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.lila {
+  color: var(--lilac);
+}
+
+.hero-subtitle {
+  max-width: 638px;
+  font-size: 24px;
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 100px;
+}
+
+.hero-contact {
+  width: 190px;
+  height: 48px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lilac);
+  color: var(--white);
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hero-lern {
+  width: 190px;
+  height: 48px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lilac-light);
+  color: var(--lilac);
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.star-up {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 20px;
+  height: 20px;
+  z-index: -1;
+}
+
+.star-middle {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  width: 34px;
+  height: 34px;
+  z-index: -1;
+}
+
+.earth {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  object-fit: contain;
+  z-index: -1;
+}
+
+.smoke-one {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-height: 215px;
+  z-index: -1;
+}
+
+.smoke-two {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  object-fit: cover;
+  width: 100%;
+  max-height: 178px;
+  z-index: -1;
+}
+
+.shuttle {
+  position: absolute;
+  left: 70%;
+  top: 30%;
+  width: 190px;
+  height: 399px;
+}
+
+.moon {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  z-index: -1;
+}
+
+.hero-elipse {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.orange-ellipse-one {
+  position: absolute;
+  top: 40%;
+  left: 65%;
+  width: 10px;
+  height: 10px;
+  z-index: -1;
+}
+
+.orange-ellipse-two {
+  position: absolute;
+  bottom: 5%;
+  left: 15%;
+  width: 10px;
+  height: 10px;
+  z-index: -1;
+}
+
+.orange-ellipse-three {
+  position: absolute;
+  bottom: 10%;
+  left: 35%;
+  width: 10px;
+  height: 10px;
+  z-index: -1;
+}
+
+.orange-ellipse-four {
+  position: absolute;
+  bottom: 5%;
+  left: 55%;
+  width: 10px;
+  height: 10px;
+  z-index: -1;
+}
+
+.orange-ellipse-five {
+  position: absolute;
+  bottom: 15%;
+  left: 65%;
+  width: 10px;
+  height: 10px;
+  z-index: -1;
+}
+
+.orange-ellipse-six {
+  position: absolute;
+  bottom: 8%;
+  right: 10%;
+  width: 10px;
+  height: 10px;
+  z-index: -1;
+}
+
+.orange-ellipse-seven {
+  position: absolute;
+  bottom: 3%;
+  right: 25%;
+  width: 10px;
+  height: 10px;
+  z-index: -1;
+}
+
+.lila-light-ellipse {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 18%;
+  left: 2%;
+}
+
+.lila-ellipse {
+  position: absolute;
+  top: 73%;
+  left: 40%;
+  z-index: -1;
+}
+
+.green-light-ellipse {
+  position: absolute;
+  top: 17%;
+  right: 6%;
+}
+
+/* OUR CLIENTS */
+
+.clients {
+  position: relative;
+}
+
+.clients-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.clients-promo {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.clients-title {
+  font-size: 40px;
+}
+
+.clients-title-star {
+  width: 21px;
+  height: 21px;
+}
+
+.clients-companies {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding-bottom: 200px;
+}
+
+.clients-companies-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+.companies {
+  width: calc(100% / 5);
+  max-width: 140px;
+  min-width: 50px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+.client-planet {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  z-index: -1;
+}
+
+.client-ellipse {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.clients-star-right {
+  position: absolute;
+  top: 40%;
+  right: 10%;
+  z-index: -1;
+}
+
+.clients-star-left {
+  position: absolute;
+  bottom: 20%;
+  left: 5%;
+}
+
+.polygon {
+  position: absolute;
+  bottom: -1px;
+  width: 100%;
+  background: var(--crema);
+  height: 300px;
+  clip-path: polygon(100% 100%, 0% 100% , 0.00% 79.67%, 1.00% 79.63%, 2.00% 79.51%, 3.00% 79.32%, 4.00% 79.05%, 5.00% 78.71%, 6.00% 78.31%, 7.00% 77.85%, 8.00% 77.35%, 9.00% 76.80%, 10.00% 76.21%, 11.00% 75.60%, 12.00% 74.98%, 13.00% 74.35%, 14.00% 73.73%, 15.00% 73.12%, 16.00% 72.54%, 17.00% 71.99%, 18.00% 71.48%, 19.00% 71.02%, 20.00% 70.62%, 21.00% 70.29%, 22.00% 70.02%, 23.00% 69.82%, 24.00% 69.71%, 25.00% 69.67%, 26.00% 69.71%, 27.00% 69.82%, 28.00% 70.02%, 29.00% 70.29%, 30.00% 70.62%, 31.00% 71.02%, 32.00% 71.48%, 33.00% 71.99%, 34.00% 72.54%, 35.00% 73.12%, 36.00% 73.73%, 37.00% 74.35%, 38.00% 74.98%, 39.00% 75.60%, 40.00% 76.21%, 41.00% 76.80%, 42.00% 77.35%, 43.00% 77.85%, 44.00% 78.31%, 45.00% 78.71%, 46.00% 79.05%, 47.00% 79.32%, 48.00% 79.51%, 49.00% 79.63%, 50.00% 79.67%, 51.00% 79.63%, 52.00% 79.51%, 53.00% 79.32%, 54.00% 79.05%, 55.00% 78.71%, 56.00% 78.31%, 57.00% 77.85%, 58.00% 77.35%, 59.00% 76.80%, 60.00% 76.21%, 61.00% 75.60%, 62.00% 74.98%, 63.00% 74.35%, 64.00% 73.73%, 65.00% 73.12%, 66.00% 72.54%, 67.00% 71.99%, 68.00% 71.48%, 69.00% 71.02%, 70.00% 70.62%, 71.00% 70.29%, 72.00% 70.02%, 73.00% 69.82%, 74.00% 69.71%, 75.00% 69.67%, 76.00% 69.71%, 77.00% 69.82%, 78.00% 70.02%, 79.00% 70.29%, 80.00% 70.62%, 81.00% 71.02%, 82.00% 71.48%, 83.00% 71.99%, 84.00% 72.54%, 85.00% 73.12%, 86.00% 73.73%, 87.00% 74.35%, 88.00% 74.98%, 89.00% 75.60%, 90.00% 76.21%, 91.00% 76.80%, 92.00% 77.35%, 93.00% 77.85%, 94.00% 78.31%, 95.00% 78.71%, 96.00% 79.05%, 97.00% 79.32%, 98.00% 79.51%, 99.00% 79.63%, 100.00% 79.67%);
+}
+
+/* SERVICES */
+
+.services {
+  background: var(--crema);
+}
+
+.services-list {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+.services-promo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 60px;
+  margin-bottom: 40px;
+}
+
+.services-title {
+  font-size: 40px;
+  text-align: center;
+  color: var(--indigo-dark);
+}
+
+.services-title-line {
+  width: 80px;
+  height: 2px;
+  background: var(--indigo-dark);
+  border: none;
+}
+
+.services-subtitle {
+  padding-top: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: var(--indigo-dark);
+}
+
+.services-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 138px;
+}
+
+.services-item {
+  max-width: 300px;
+  height: 340px;
+  padding: 10px 10px 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  background: var(--lilac);
+  border: none;
+  border-radius: 18px;
+}
+
+.services-item-img {
+  margin-top: 20px;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.services-item-title {
+  font-size: 21px;
+  text-align: center;
+}
+
+.services-item-btn {
+  width: 130px;
+  height: 48px;
+  background: var(--indigo-dark);
+  color: var(--white);
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.services-item-btn:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.1);
+}
+
+/* About us */
+
+.about {
+  padding-top: 60px;
+  background: var(--indigo-light);
+}
+
+.about-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 96px;
+}
+
+.about-promo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-title {
+  font-size: 40px;
+  text-align: center;
+}
+
+.about-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 138px;
+}
+
+.about-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 40px;
+}
+
+.about-img {
+  width: 100%;
+  max-width: 529px;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.about-item {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  max-width: 637px;
+  background: var(--crema);
+  border: none;
+  border-radius: 12px;
+  padding: 20px 40px;
+}
+
+.about-round {
+  position: relative;
+  max-width: 100px;
+  min-width: 85px;
+  max-height: 100px;
+  min-height: 85px;
+  border: none;
+  border-radius: 50%;
+  background: var(--indigo-dark);
+  object-position: center;
+  margin-right: 40px;
+}
+
+.about-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+}
+
+.about-description {
+  max-width: 390px;
+  color: var(--indigo-dark);
+  font-size: 21px;
+}
+
+/* Work with Nusa */
+
+.work {
+  padding-top: 75px;
+  position: relative;
+}
+
+.work-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 68px;
+}
+
+.work-promo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-title {
+  font-size: 40px;
+  text-align: center;
+}
+
+.work-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 75px;
+}
+
+.work-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-round {
+  position: relative;
+  min-width: 100px;
+  min-height: 100px;
+  border: none;
+  border-radius: 50%;
+  background: var(--lilac);
+  margin-bottom: 20px;
+}
+
+.work-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.work-item-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.work-ellips {
+  position: absolute;
+  left: 0;
+  top: 15%;
+  z-index: -1;
+}
+
+.work-star-left {
+  position: absolute;
+  left: 11%;
+  top: 47%;
+  z-index: -1;
+  width: 35px;
+  height: 35px;
+}
+
+.work-star-right {
+  position: absolute;
+  right: 8%;
+  bottom: 10%;
+  z-index: -1;
+  width: 35px;
+  height: 35px;
+}
+
+
+/* TESTIMONIALS */
+
+.testimonials {
+  background: var(--indigo-light);
+  position: relative;
+}
+
+.testimonials-list {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.testimonials-promo {
+  margin-top: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.testimonials-title {
+  font-size: 41px;
+  z-index: 1;
+}
+
+.testimonials-line {
+  width: 200px;
+  height: 2px;
+  background: var(--white);
+  margin: 0px 20px;
+  z-index: 1;
+}
+
+.testimonials-title-star {
+  height: 26px;
+  width: 26px;
+  z-index: 1;
+}
+
+.testimonials-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 180px;
+}
+
+.testimonials-item {
+  max-width: 420px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  min-height: 300px;
+  background: var(--crema);
+  border: none;
+  border-radius: 0px 20px 0px 20px;
+  padding: 40px;
+  z-index: 1;
+}
+
+.testimonials-item-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.testimonials-item-icon {
+  max-width: 80px;
+  margin-right: 25px;
+}
+
+.testimonials-item-promo {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: start;
+  gap: 10px;
+}
+
+.testimonials-item-title {
+  color: var(--indigo-dark);
+}
+
+.testimonials-item-subtitle {
+  color: var(--indigo-dark);
+}
+
+.testimonials-item-description {
+  margin-top: 30px;
+  color: var(--indigo-dark);
+}
+
+.testimonials-moon {
+  position: absolute;
+  bottom: 5%;
+  left: 2%;
+  
+}
+
+.testimonials-earth {
+  position: absolute;
+  right: 2%;
+  top: 20%;
+  
+}
+
+.testimonials-star {
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  bottom: 10%;
+  right: 30%;
+}
+
+/* PRICING */
+
+.pricing {
+  background: var(--indigo-light);
+}
+
+.pricing-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-promo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.pricing-title {
+  font-size: 40px;
+}
+
+.pricing-subtitle {
+  font-size: 18px;
+}
+
+.pricing-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+  margin-bottom: 150px;
+}
+
+.pricing-item {
+  width: 300px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--crema);
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+}
+
+.pricing-item-plan {
+  text-align: center;
+  font-size: 20px;
+  color: var(--indigo-dark);
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.pricing-item-rice {
+  text-align: center;
+  font-size: 30px;
+  color: var(--orange);
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.pricing-item-ul {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+
+.pricing-item-li {
+  color: var(--indigo-dark);
+}
+
+/* DEVID SMITH - CEO */
+
+.director {
+  position: relative;
+  background: var(--indigo-light);
+  padding-top: 125px;
+  padding-bottom: 25px;
+}
+
+.director-list {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 56px;
+}
+
+.director-promo {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 10px;
+}
+
+.director-title {
+  font-size: 28px;
+  z-index: 1;
+}
+
+.director-star {
+  width: 35px;
+  height: 35px;
+  z-index: 1;
+}
+
+.director-btn {
+  width: 179px;
+  height: 74px;
+  background: var(--lilac);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.director-name {
+  font-size: 16px;
+  color: var(--white);
+  z-index: 1;
+}
+
+.director-ellipse {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.director-moon {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+}
+
+/* Footer */
+
+.footer {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.footer-list {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.5fr;
+  align-items: flex-start;
+  justify-content: start;
+  gap: 20px;
+}
+
+.footer-item:first-child {
+  margin-right: 20px;
+}
+
+.footer-item {
+  max-width: 500px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
+.footer-item-title {
+  color: var(--lilac);
+}
+
+.footer-logo {
+  width: 235px;
+  height: 70px;
+}
+
+.footer-text {
+  margin-top: 20px;
+}
+
+.footer-menu {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.footer-menu-item:hover {
+  color: var(--lilac-light);
+}
+
+.footer-menu-round {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: var(--white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-menu-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-menu-text {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.footer-line {
+  width: 100%;
+  height: 2px;
+  background: var(--white);
+  border: none;
+  margin: 25px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* Медиазапрос для laptop */
+@media (max-width: 900px) {
+  /* NAVBAR */
+  .navbar-menu {
+    display: none;
+  }
+  .navbar-buttons {
+    display: none;
+  }
+
+  /* NAVBAR MOBILE */
+  .bx {
+    display: block;
+  }
+
+  /* HERO */
+  .hero-title {
+    font-size: 56px;
+    max-width: 70%;
+  }
+  .hero-subtitle {
+    font-size: 18px;
+    max-width: 70%;
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  /* OUR CLIENTS */
+  .clients-list {
+    gap: 40px;
+  }
+  .clients-title {
+    font-size: 30px;
+  }
+
+  /* SERVICES */
+  .services-promo {
+    padding-top: 40px;
+  }
+  .services-title {
+    font-size: 35px;
+  }
+  .services-content {
+    margin-bottom: 80px;
+  }
+
+  /* ABOUT US */
+  .about {
+    padding-top: 40px;
+  }
+  .about-list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 46px;
+  }
+  .about-title {
+    font-size: 35px;
+  }
+  .about-content {
+    margin-bottom: 80px;
+  }
+  .about-left {
+    margin-right: 30px;
+  }
+  .about-right {
+    gap: 20px;
+  }
+  .about-item {
+    padding: 10px 20px;
+  }
+  .about-round {
+    min-width: 65px;
+    min-height: 65px;
+    margin-right: 20px;
+  }
+  .about-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .about-description {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  /* WORK WITH NUSA */
+  .work {
+    padding-top: 40px;
+  }
+  .work-list {
+    gap: 48px;
+  }
+  .work-title {
+    font-size: 35px;
+  }
+  .work-round {
+    position: relative;
+    min-width: 70px;
+    min-height: 70px;
+  }
+  .work-icon {
+    width: 50px;
+  }
+  .work-item-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-list {
+    gap: 70px;
+  }
+  .testimonials-promo {
+    margin-top: 40px;
+  }
+  .testimonials-title {
+    font-size: 35px;
+    line-height: 1.1;
+  }
+  .testimonials-line {
+    display: none;
+  }
+  .testimonials-title-star {
+    display: none;
+  }
+  .testimonials-content {
+    gap: 20px;
+    margin-bottom: 80px;
+  }
+
+  /* PRICING */
+  .pricing-promo {
+    margin-top: 40px;
+    margin-bottom: 35px;
+  }
+  .pricing-title {
+    font-size: 35px;
+    line-height: 1.1;
+  }
+  .pricing-content {
+    margin-bottom: 80px;
+    gap: 15px;
+  }
+  .pricing-item {
+    max-width: 300px;
+    padding: 10px;
+  }
+  .pricing-item-plan {
+    margin-top: 15px;
+  }
+  .pricing-item-rice {
+    font-size: 25px;
+    margin-top: 15px;
+  }
+  .pricing-item-ul {
+    margin-top: 15px;
+  }
+
+  /* DEVID SMITH - CEO */
+  .director {
+    padding-top: 60px;
+    padding-bottom: 45px;
+  }
+  .director-star {
+    display: none;
+  }
+  .director-name {
+    text-align: center;
+  }
+  .director-moon {
+    display: none;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding-top: 40px;
+    padding-bottom: 25px;
+  }
+  .footer-list {
+    grid-template-columns: 2fr 1fr 1fr; 
+  }
+  .footer-item:first-child {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 700px) {
+  /* hero */
+  .earth,
+  .moon,
+  .star-middle,
+  .star-up,
+  .shuttle,
+  .smoke-one,
+  .smoke-two,
+  .orange-ellipse-one,
+  .orange-ellipse-two,
+  .orange-ellipse-three,
+  .orange-ellipse-four,
+  .orange-ellipse-five,
+  .orange-ellipse-six,
+  .orange-ellipse-seven,
+  .lila-light-ellipse,
+  .lila-ellipse,
+  .green-light-ellipse {
+    display: none;
+  }
+  .hero-title {
+    font-size: 46px;
+    max-width: 90%;
+  }
+  .hero-subtitle {
+    max-width: 80%;
+  }
+  .hero-buttons {
+    padding-bottom: 50px;
+  }
+
+  /* OUR CLIENTS */
+  .client-ellipse {
+    display: none;
+  }
+  .clients-star-right {
+    display: none;
+  }
+
+  /* SERVICES */
+  .services-content {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .services-item {
+    width: 300px;
+    height: 340px;
+    gap: 20px;
+  }
+
+  /* ABOUT US */
+  .about-list {
+    gap: 30px;
+  }
+  .about-content {
+    flex-direction: column;
+    margin-bottom: 40px;
+    gap: 40px;
+  }
+  .about-left {
+    margin-right: 0px;
+  }
+  .about-img {
+    max-width: 450px;
+  }
+  .about-item {
+    max-width: 450px;
+  }
+
+  /* WORK WITH NUSA */
+  .work-content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+  }
+  .work-star-left {
+    display: none;
+  }
+
+  /* PRICING */
+  .pricing-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .pricing-item {
+    min-height: 300px;
+  }
+
+  /* DEVID SMITH - CEO */
+  .director-list {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+  }
+  .director-promo {
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* FOOTER */
+  .footer-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  /* HERO */
+  .hero-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 40px;
+  }
+
+  /* OUR CLIENTS */ 
+  .clients {
+    display: none;
+  }
+
+  /* SERVICES */
+  .services-title {
+    font-size: 30px;
+  }
+
+  /* ABOUT US */
+  .about-title {
+    font-size: 30px;
+  }
+
+  /* WORK WITH NUSA */
+  .work-title {
+    font-size: 30px;
+  }
+  .work-ellips {
+    display: none;
+  }
+  .work-content {
+    margin-bottom: 40px;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-list {
+    gap: 35px;
+  }
+  .testimonials-title {
+    font-size: 30px;
+  }
+  .testimonials-item {
+    height: 290px;
+    min-height: 250px;
+    padding: 20px;
+  }
+  .testimonials-content {
+    margin-bottom: 40px;
+  }
+  .testimonials-earth,
+  .testimonials-moon {
+    display: none;
+  }
+
+  /* PRICING */
+  .pricing-title {
+    font-size: 30px;
+  }
+
+  /* FOOTER */
+  .footer-list {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+}
+
+
+
